@@ -19,13 +19,11 @@ sfRenderWindow *window)
             launcher1();
         }
         if (event.mouseButton.x > 810 && event.mouseButton.x < 1010) {
-            printf("720p\n");
             dispose(window);
             free(params);
             launcher2();
         }
         if (event.mouseButton.x > 1140 && event.mouseButton.x < 1440) {
-            printf("480p\n");
             dispose(window);
             free(params);
             launcher3();

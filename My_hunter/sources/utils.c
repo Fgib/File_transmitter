@@ -7,9 +7,25 @@
 
 #include "include/my_hunter.h"
 
+int score_debugger(int nbr)
+{
+    int n = 1;
+    int po = 10;
+
+    if (nbr < 0)
+        nbr = -nbr;
+    while (nbr >= po) {
+        n++;
+        if (po > 214748364)
+            break;
+        po *= 10;
+    }
+    return (n);
+}
+
 char *get_str(int val)
 {
-    int len = val % 10 + 1;
+    int len = score_debugger(val);
     char *result = malloc(sizeof(char) * len);
 
     result[len] = '\0';
