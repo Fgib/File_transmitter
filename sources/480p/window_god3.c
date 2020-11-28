@@ -12,8 +12,8 @@ void run_window3(sfRenderWindow *window, sfEvent event, int width, int height)
     struct game *params = malloc(sizeof(struct game));
     sfClock *frame_clock = sfClock_create();
     sfClock *back_clock = sfClock_create();
-    load_textures(params);
-    initialize_settings(params, width, height);
+    load_textures3(params);
+    initialize_settings3(params, width, height);
     while (sfRenderWindow_isOpen(window)) {
         while (sfRenderWindow_pollEvent(window, &event))
             manage_clicks3(window, event, params);

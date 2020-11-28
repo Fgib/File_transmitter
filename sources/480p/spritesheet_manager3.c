@@ -7,17 +7,6 @@
 
 #include "../include/my_hunter.h"
 
-sfIntRect sprite_info3(int top, int left, int width, int height)
-{
-    sfIntRect rect;
-
-    rect.height = height;
-    rect.width = width;
-    rect.left = left;
-    rect.top = top;
-    return (rect);
-}
-
 sfIntRect text_lego_rank3(struct game *params)
 {
     if (params->lego->skin_id > 48)

@@ -7,11 +7,6 @@
 
 #include "../include/my_hunter.h"
 
-void print_score(struct game *params)
-{
-   
-}
-
 void load_scoreboard(struct game *params)
 {
     params->t_score = sfText_create();

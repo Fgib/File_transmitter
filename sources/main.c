@@ -19,7 +19,7 @@ int launcher2(void)
 {
     sfRenderWindow *window = create_my_window(1280, 720);
     sfEvent event;
-    run_window(window, event, 1280, 720);
+    run_window2(window, event, 1280, 720);
     return 0;
 }
 
@@ -27,7 +27,7 @@ int launcher3(void)
 {
     sfRenderWindow *window = create_my_window(720, 480);
     sfEvent event;
-    run_window(window, event, 720, 480);
+    run_window3(window, event, 720, 480);
     return 0;
 }
 

@@ -23,7 +23,7 @@ void lego_gestion3(struct game *params)
     int grav = 10;
     int x = params->lego->coo.x += (params->lego->speed + params->score);
     if (params->lego->coo.x > params->w_width_x || params->lego->coo.y > \
-params->w_height_y || params->lego->coo.x <= 0 || params->lego->coo.y <= 0) {
+params->w_height_y || params->lego->coo.x <= 0) {
         params->score_over += 1;
         respawn_lego3(params);
         if (params->score_over > 3)
@@ -35,3 +35,4 @@ params->w_height_y || params->lego->coo.x <= 0 || params->lego->coo.y <= 0) {
     sfSprite_setPosition(params->lego->sprite, \
 set_position(params->lego->coo.x, params->lego->coo.y));
 }
+

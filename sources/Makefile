@@ -17,19 +17,23 @@ SRC			=		1080p/refresh_rate_manager.c\
 					1080p/window_god.c\
 					720p/refresh_rate_manager2.c\
 					720p/spritesheet_manager2.c\
+					720p/events_manager_bis2.c\
 					720p/textures_manager2.c\
 					720p/initialisation2.c\
 					720p/screen_printer2.c\
 					720p/events_manager2.c\
 					720p/lego_manager2.c\
+					720p/score_drawer2.c\
 					720p/window_god2.c\
 					480p/refresh_rate_manager3.c\
 					480p/spritesheet_manager3.c\
+					480p/events_manager_bis3.c\
 					480p/textures_manager3.c\
 					480p/initialisation3.c\
 					480p/screen_printer3.c\
 					480p/events_manager3.c\
 					480p/lego_manager3.c\
+					480p/score_drawer3.c\
 					480p/window_god3.c\
 					utils.c\
 					maths.c\
@@ -59,7 +63,7 @@ $(NAME):
 				$(DEBUG) make start
 				$(DEBUG) printf "$(GREEN)Successfully created objs\n\n$(WHITE)"
 				$(DEBUG) printf "$(BLUE)Binary compilation\n$(WHITE)"
-				$(DEBUG) make loading
+#				$(DEBUG) make loading
 				$(DEBUG) gcc -o $(NAME) $(OBJ) $(CSFMLFLAGS) -g3 -lm
 				$(DEBUG) printf "$(GREEN)Binary succesfully created\n\n$(WHITE)"
 				$(DEBUG) rm -rf $(OBJ)

@@ -7,14 +7,16 @@
 
 #include "../include/my_hunter.h"
 
-void settings_menu_event(sfEvent event, struct game *params, sfRenderWindow *window)
+void settings_menu_event(sfEvent event, struct game *params, \
+sfRenderWindow *window)
 {
     if (params->windows_step != 3 || event.type != sfEvtMouseButtonPressed)
         return;
     if (event.mouseButton.y > 720 && event.mouseButton.y < 880) {
         if (event.mouseButton.x > 480 && event.mouseButton.x < 780) {
-            printf("1080p\n");
-            params->windows_step = 0;
+            dispose(window);
+            free(params);
+            launcher1();
         }
         if (event.mouseButton.x > 810 && event.mouseButton.x < 1010) {
             printf("720p\n");

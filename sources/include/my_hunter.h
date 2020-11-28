@@ -59,7 +59,7 @@ struct lego {
 
 //main
 void print_helper(void);
-int launcher(void);
+int launcher1(void);
 int launcher2(void);
 int launcher3(void);
 
@@ -82,7 +82,8 @@ void manage_events(struct game *params, sfEvent event, sfRenderWindow *window);
 void start_menu_event(sfEvent event, struct game *params);
 void game_event(sfEvent event, struct game *params);
 void end_menu_event(sfEvent event, struct game *params);
-void settings_menu_event(sfEvent event, struct game *params, sfRenderWindow *window);
+void settings_menu_event(sfEvent event, struct game *params, \
+sfRenderWindow *window);
 
 //lego_manager
 void respawn_lego(struct game *params);
@@ -124,18 +125,24 @@ sfSprite *get_sprite(sfTexture *texture);
 void load_textures(struct game *params);
 void load_textures_one(struct game *params);
 void load_textures_two(struct game *params);
+void load_scale720p(struct game *params);
 
 //720p
 //events_manager
 void manage_clicks2(sfRenderWindow *window, sfEvent event, struct game *params);
-void manage_events2(struct game *params, sfEvent event);
+void manage_events2(struct game *params, sfEvent event, sfRenderWindow *window);
 void start_menu_event2(sfEvent event, struct game *params);
 void game_event2(sfEvent event, struct game *params);
 void end_menu_event2(sfEvent event, struct game *params);
+void settings_menu_event2(sfEvent event, struct game *params, \
+sfRenderWindow *window);
 
 //lego_manager
 void respawn_lego2(struct game *params);
 void lego_gestion2(struct game *params);
+
+//scrore_drawer
+void load_scoreboard2(struct game *params);
 
 //screen_printer
 void window_update2(sfRenderWindow *window, struct game *params);
@@ -173,10 +180,12 @@ void load_textures_two2(struct game *params);
 //480p
 //events_manager
 void manage_clicks3(sfRenderWindow *window, sfEvent event, struct game *params);
-void manage_events3(struct game *params, sfEvent event);
+void manage_events3(struct game *params, sfEvent event, sfRenderWindow *window);
 void start_menu_event3(sfEvent event, struct game *params);
 void game_event3(sfEvent event, struct game *params);
 void end_menu_event3(sfEvent event, struct game *params);
+void settings_menu_event3(sfEvent event, struct game *params, \
+sfRenderWindow *window);
 
 //lego_manager
 void respawn_lego3(struct game *params);

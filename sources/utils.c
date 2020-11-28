@@ -11,7 +11,7 @@ char *get_str(int val)
 {
     int len = val % 10 + 1;
     char *result = malloc(sizeof(char) * len);
-    
+
     result[len] = '\0';
     while (len--) {
         result[len] = val %10 + 48;

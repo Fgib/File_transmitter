@@ -12,7 +12,9 @@ sfRenderWindow *window, struct game *params)
 {
     sfClock_restart(back_clock);
     sfRenderWindow_clear(window, sfBlack);
-    window_update3(window, params);
+    window_update(window, params);
+    sfText_destroy(params->t_score);
+    load_scoreboard(params);
     sfRenderWindow_display(window);
 }
 
@@ -22,6 +24,6 @@ sfRenderWindow *window, struct game *params)
     sfClock_restart(frame_clock);
     params->lego->skin_id++;
     params->title->skin_id++;
-    sfSprite_setTextureRect(params->lego->sprite, text_lego_rank3(params));
-    sfSprite_setTextureRect(params->title->sprite, text_title_rank3(params));
+    sfSprite_setTextureRect(params->lego->sprite, text_lego_rank(params));
+    sfSprite_setTextureRect(params->title->sprite, text_title_rank(params));
 }

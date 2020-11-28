@@ -13,6 +13,8 @@ sfRenderWindow *window, struct game *params)
     sfClock_restart(back_clock);
     sfRenderWindow_clear(window, sfBlack);
     window_update2(window, params);
+    sfText_destroy(params->t_score);
+    load_scoreboard2(params);
     sfRenderWindow_display(window);
 }
 

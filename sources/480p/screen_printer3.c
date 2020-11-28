@@ -27,6 +27,7 @@ void start_menu3(sfRenderWindow *window, struct game *params)
 {
     sfRenderWindow_setMouseCursorVisible(window, sfTrue);
     sfRenderWindow_drawSprite(window, params->menu_background, NULL);
+    sfRenderWindow_drawSprite(window, params->exit, NULL);
     sfRenderWindow_drawSprite(window, params->play, NULL);
     sfRenderWindow_drawSprite(window, params->title->sprite, NULL);
     sfRenderWindow_drawSprite(window, params->settings, NULL);
@@ -40,13 +41,14 @@ void start_menu3(sfRenderWindow *window, struct game *params)
 
 void game_engine3(sfRenderWindow *window, struct game *params)
 {
-    lego_gestion3(params);
+    lego_gestion(params);
     sfRenderWindow_setMouseCursorVisible(window, sfFalse);
     sfSprite_setPosition(params->target, set_position(params->mouse_coo.x - 50\
 , params->mouse_coo.y - 50));
     sfRenderWindow_drawSprite(window, params->background, NULL);
     sfRenderWindow_drawSprite(window, params->lego->sprite, NULL);
     sfRenderWindow_drawSprite(window, params->target, NULL);
+    sfRenderWindow_drawText(window, params->t_score, NULL);
 }
 
 void end_menu3(sfRenderWindow *window, struct game *params)

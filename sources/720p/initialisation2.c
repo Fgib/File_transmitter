@@ -31,6 +31,6 @@ void initialize_settings2(struct game *params, int width, int height)
     params->windows_step = 0;
     params->w_width_x = width;
     params->w_height_y = height;
-    params->play_sx = 480;
-    params->play_sy = 270;
+    params->play_sx = 320;
+    params->play_sy = 180;
 }
