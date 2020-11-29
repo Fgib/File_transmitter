@@ -39,6 +39,7 @@ struct game {
     sfSprite *res_hd;
     sfSprite *res_sd;
     sfText *t_score;
+    sfText *t_lives;
     sfText *t_best_score;
     sfFont *font_armada;
 };

@@ -49,6 +49,7 @@ void game_engine(sfRenderWindow *window, struct game *params)
     sfRenderWindow_drawSprite(window, params->lego->sprite, NULL);
     sfRenderWindow_drawSprite(window, params->target, NULL);
     sfRenderWindow_drawText(window, params->t_score, NULL);
+    sfRenderWindow_drawText(window, params->t_lives, NULL);
 }
 
 void end_menu(sfRenderWindow *window, struct game *params)

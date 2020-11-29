@@ -23,10 +23,5 @@ sfRenderWindow *window)
             free(params);
             launcher2();
         }
-        if (event.mouseButton.x > 760 && event.mouseButton.x < 960) {
-            dispose(window);
-            free(params);
-            launcher3();
-        }
     }
 }

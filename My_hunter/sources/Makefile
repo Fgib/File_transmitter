@@ -25,16 +25,6 @@ SRC			=		1080p/refresh_rate_manager.c\
 					720p/lego_manager2.c\
 					720p/score_drawer2.c\
 					720p/window_god2.c\
-					480p/refresh_rate_manager3.c\
-					480p/spritesheet_manager3.c\
-					480p/events_manager_bis3.c\
-					480p/textures_manager3.c\
-					480p/initialisation3.c\
-					480p/screen_printer3.c\
-					480p/events_manager3.c\
-					480p/lego_manager3.c\
-					480p/score_drawer3.c\
-					480p/window_god3.c\
 					utils.c\
 					maths.c\
 					main.c \

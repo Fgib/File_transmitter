@@ -26,7 +26,7 @@ void lego_gestion(struct game *params)
 params->w_height_y || params->lego->coo.x <= 0 || params->lego->coo.y <= 0) {
         params->score_over += 1;
         respawn_lego(params);
-        if (params->score_over > 3)
+        if (params->score_over > 4)
             params->windows_step++;
 
     }

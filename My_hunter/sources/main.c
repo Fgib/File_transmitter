@@ -23,14 +23,6 @@ int launcher2(void)
     return 0;
 }
 
-int launcher3(void)
-{
-    sfRenderWindow *window = create_my_window(720, 480);
-    sfEvent event;
-    run_window3(window, event, 720, 480);
-    return 0;
-}
-
 void print_helper(void)
 {
     write(1, "An hunter game rendered in a CSFML window\n\n", 44);
@@ -40,7 +32,27 @@ void print_helper(void)
     " weak computer not recomended\n", 67);
     write(1, "\t2\tfor a game in a normal resolution\n", 37);
     write(1, "\t3\tfor a game in the lowest resolution,"
-    " fits with any computer\n\n", 64);
+    " fits with any computer [WORK IN PROGRESS]"
+    " not available yet\n\n", 100);
+}
+
+void print_lore(void)
+{
+    write(1, "\nIn this game, your goal is to destroy LEGOs send by the", 56);
+    write(1, " green team, if your side were hit three times by their", 55);
+    write(1, " projectiles, you will loose.\n", 30);
+    write(1, "This game is optimised to run in 1080p, but i realised", 55);
+    write(1, " that some of my mate can't run it on their computer so", 55);
+    write(1, " i made a 720p version (but this resolution isn't", 49);
+    write(1, " optimised).\n\n", 14);
+    write(1, "CREDITS :\n", 10);
+    write(1, "\tGame develloper : Florian Gibault\n", 35);
+    write(1, "\tTexture & spritesheet designer : Florian Gibault\n", 50);
+    write(1, "\tBug maker : Florian Gibault\n", 29);
+    write(1, "\tBug resolver : Alann Schnegg\n", 30);
+    write(1, "\tInsane ideas creators : Lisa Glaziou & Paul Ancey\n", 51);
+    write(1, "\tMoral support : Lisa Glaziou & Paul Ancey & Bryan Zakka", 56);
+    write(1, "\n\tMakefile inspiration : Hugo Bach & Maxime Gravin\n\n", 52);
 }
 
 int main(int argc, char **argv)
@@ -57,8 +69,8 @@ int main(int argc, char **argv)
         launcher2();
         return (0);
     }
-    if (my_getnbr(argv[1]) == 3) {
-        launcher3();
+    if (argv[1][0] == '-') {
+        print_lore();
         return (0);
     }
     print_helper();

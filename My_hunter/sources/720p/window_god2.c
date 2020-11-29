@@ -15,9 +15,8 @@ void run_window2(sfRenderWindow *window, sfEvent event, int width, int height)
     load_textures2(params);
     initialize_settings2(params, width, height);
     while (sfRenderWindow_isOpen(window)) {
-        while (sfRenderWindow_pollEvent(window, &event)) {
+        while (sfRenderWindow_pollEvent(window, &event))
             manage_clicks2(window, event, params);
-        }
         if (sfClock_getElapsedTime(back_clock).microseconds > 16000)
             refresh_window2(back_clock, window, params);
         if (sfClock_getElapsedTime(frame_clock).microseconds > 41666)
@@ -25,6 +24,7 @@ void run_window2(sfRenderWindow *window, sfEvent event, int width, int height)
         if (params->windows_step > 4) {
             free(params);
             dispose(window);
+            return;
         }
     }
     dispose(window);

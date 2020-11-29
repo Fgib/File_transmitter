@@ -15,4 +15,11 @@ void load_scoreboard(struct game *params)
     sfText_setColor(params->t_score, sfWhite);
     sfText_setCharacterSize(params->t_score, 50);
     sfText_setPosition(params->t_score, set_position(945, 25));
+
+    params->t_lives = sfText_create();
+    sfText_setString(params->t_lives, get_str(3 - params->score_over));
+    sfText_setFont(params->t_lives, params->font_armada);
+    sfText_setColor(params->t_lives, sfWhite);
+    sfText_setCharacterSize(params->t_lives, 50);
+    sfText_setPosition(params->t_lives, set_position(925, 1000));
 }
