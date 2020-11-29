@@ -14,12 +14,12 @@ sfRenderWindow *window)
         return;
     if (event.mouseButton.y > 480 && event.mouseButton.y < 586) {
         if (event.mouseButton.x > 320 && event.mouseButton.x < 520) {
-            dispose(window);
+            dispose(window, params);
             free(params);
             launcher1();
         }
         if (event.mouseButton.x > 540 && event.mouseButton.x < 740) {
-            dispose(window);
+            dispose(window, params);
             free(params);
             launcher2();
         }

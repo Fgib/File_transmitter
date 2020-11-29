@@ -7,9 +7,12 @@
 
 #include "../include/my_hunter.h"
 
-void dispose(sfRenderWindow *window)
+void dispose(sfRenderWindow *window, struct game *params)
 {
     sfRenderWindow_destroy(window);
+    sfMusic_destroy(params->music);
+    sfSound_destroy(params->bricks);
+    sfSoundBuffer_destroy(params->b_bricks);
 }
 
 sfRenderWindow *create_my_window(int width, int height)
@@ -40,11 +43,11 @@ void run_window(sfRenderWindow *window, sfEvent event, int width, int height)
         if (sfClock_getElapsedTime(frame_clock).microseconds > 41666)
             refresh_anim(frame_clock, window, params);
         if (params->windows_step > 4) {
+            dispose(window, params);
             free(params);
-            dispose(window);
             return;
         }
     }
-    dispose(window);
+    dispose(window, params);
     free(params);
 }

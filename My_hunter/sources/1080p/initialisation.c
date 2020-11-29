@@ -33,4 +33,8 @@ void initialize_settings(struct game *params, int width, int height)
     params->w_height_y = height;
     params->play_sx = 480;
     params->play_sy = 270;
+    sfMusic_play(params->music);
+    sfMusic_setLoop(params->music, sfTrue);
+    params->bricks = sfSound_create();
+    sfSound_setBuffer(params->bricks, params->b_bricks);
 }

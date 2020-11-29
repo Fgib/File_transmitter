@@ -56,4 +56,6 @@ sfTexture_createFromFile("pics/FHD/720.png", NULL));
     params->res_sd = get_sprite(\
 sfTexture_createFromFile("pics/FHD/480.png", NULL));
     params->font_armada = sfFont_createFromFile("pics/astroarmada.ttf");
+    params->music = sfMusic_createFromFile("pics/backgroundsound.ogg");
+    params->b_bricks = sfSoundBuffer_createFromFile("pics/brick_crack.ogg");
 }

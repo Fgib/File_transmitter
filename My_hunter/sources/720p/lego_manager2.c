@@ -14,6 +14,8 @@ void respawn_lego2(struct game *params)
     params->lego->coo.y = 690;
     params->lego->r_angle = random_gen(0, 10) - 5;
     params->lego->r_offset = random_gen(0, 230);
+    if (params->score_over < 4)
+        sfSound_play(params->bricks);
 }
 
 void lego_gestion2(struct game *params)
@@ -26,8 +28,11 @@ void lego_gestion2(struct game *params)
 params->w_height_y || params->lego->coo.x <= 0 || params->lego->coo.y <= 0) {
         params->score_over += 1;
         respawn_lego2(params);
-        if (params->score_over > 3)
+        if (params->score_over > 3) {
             params->windows_step++;
+            params->best_score = params->best_score < params->score ? \
+params->score : params->best_score;
+        }
     }
     params->lego->coo.y = 640 - params->lego->r_offset - \
 ((-grav / 2 * v_0 * v_0 * cosinus(alpha)) * x * x + tange(alpha) * x);

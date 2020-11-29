@@ -22,11 +22,11 @@ void run_window2(sfRenderWindow *window, sfEvent event, int width, int height)
         if (sfClock_getElapsedTime(frame_clock).microseconds > 41666)
             refresh_anim2(frame_clock, window, params);
         if (params->windows_step > 4) {
+            dispose(window, params);
             free(params);
-            dispose(window);
             return;
         }
     }
-    dispose(window);
+    dispose(window, params);
     free(params);
 }

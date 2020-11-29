@@ -49,10 +49,13 @@ void game_engine2(sfRenderWindow *window, struct game *params)
     sfRenderWindow_drawSprite(window, params->lego->sprite, NULL);
     sfRenderWindow_drawSprite(window, params->target, NULL);
     sfRenderWindow_drawText(window, params->t_score, NULL);
+    sfRenderWindow_drawText(window, params->t_lives, NULL);
+    sfRenderWindow_drawText(window, params->f_remain, NULL);
 }
 
 void end_menu2(sfRenderWindow *window, struct game *params)
 {
+    update_score2(params);
     sfRenderWindow_setMouseCursorVisible(window, sfTrue);
     sfRenderWindow_drawSprite(window, params->menu_background, NULL);
     sfRenderWindow_drawSprite(window, params->game_over, NULL);
@@ -62,6 +65,10 @@ void end_menu2(sfRenderWindow *window, struct game *params)
 - 160, params->w_height_y / 4 - 150));
     sfSprite_setPosition(params->restart, set_position(params->w_width_x / 2\
 - 160, params->w_height_y /2 - 135));
+    sfRenderWindow_drawText(window, params->f_score, NULL);
+    sfRenderWindow_drawText(window, params->f_best_score, NULL);
+    sfRenderWindow_drawText(window, params->t_score, NULL);
+    sfRenderWindow_drawText(window, params->t_best_score, NULL);
 }
 
 void settings_menu2(sfRenderWindow *window, struct game *params)

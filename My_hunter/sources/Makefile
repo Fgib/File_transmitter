@@ -37,7 +37,7 @@ NAME	=		my_hunter
 
 DEBUG	=		@
 
-CSFMLFLAGS	=	-l csfml-graphics -l csfml-window -l csfml-system
+CSFMLFLAGS	=	-l csfml-graphics -l csfml-window -l csfml-system -l csfml-audio
 
 #COLORS
 WHITE	=		\e[0m

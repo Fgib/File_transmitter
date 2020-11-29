@@ -28,12 +28,14 @@ void print_helper(void)
     write(1, "An hunter game rendered in a CSFML window\n\n", 44);
     write(1, "USAGE\n\t./my_hunter [OPTION]\n\n", 29);
     write(1, "OPTION\n", 7);
+    write(1, "\t-h\tfor informations about the lore and credits\n", 49);
     write(1, "\t1\tfor a game in the best resolution,"
     " weak computer not recomended\n", 67);
-    write(1, "\t2\tfor a game in a normal resolution\n", 37);
+    write(1, "\t2\tfor a game in a normal resolution,", 37);
+    write(1, " DON'T use in review, unless your pc is too weak\n", 49);
     write(1, "\t3\tfor a game in the lowest resolution,"
     " fits with any computer [WORK IN PROGRESS]"
-    " not available yet\n\n", 100);
+    " not available yet\n\n", 102);
 }
 
 void print_lore(void)
@@ -45,14 +47,17 @@ void print_lore(void)
     write(1, " that some of my mate can't run it on their computer so", 55);
     write(1, " i made a 720p version (but this resolution isn't", 49);
     write(1, " optimised).\n\n", 14);
+    write(1, "The settings button is a bonus and may cause segfault, ", 55);
+    write(1, "please use it only if your not a reveiwer\n\n", 44);
     write(1, "CREDITS :\n", 10);
     write(1, "\tGame develloper : Florian Gibault\n", 35);
     write(1, "\tTexture & spritesheet designer : Florian Gibault\n", 50);
+    write(1, "\tSound designer : Thomas Gibault\n", 33);
     write(1, "\tBug maker : Florian Gibault\n", 29);
     write(1, "\tBug resolver : Alann Schnegg\n", 30);
     write(1, "\tInsane ideas creators : Lisa Glaziou & Paul Ancey\n", 51);
     write(1, "\tMoral support : Lisa Glaziou & Paul Ancey & Bryan Zakka", 56);
-    write(1, "\n\tMakefile inspiration : Hugo Bach & Maxime Gravin\n\n", 52);
+    write(1, "\n\tMakefile : Thx Hugo Bach & Maxime Gravin for help\n\n", 53);
 }
 
 int main(int argc, char **argv)

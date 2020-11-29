@@ -11,6 +11,7 @@
 #include <SFML/System.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include <unistd.h>
 #include <time.h>
 #include <math.h>
@@ -41,7 +42,13 @@ struct game {
     sfText *t_score;
     sfText *t_lives;
     sfText *t_best_score;
+    sfText *f_remain;
+    sfText *f_score;
+    sfText *f_best_score;
     sfFont *font_armada;
+    sfMusic *music;
+    sfSoundBuffer *b_bricks;
+    sfSound *bricks;
 };
 
 struct giffer {
@@ -92,6 +99,8 @@ void lego_gestion(struct game *params);
 
 //scrore_drawer
 void load_scoreboard(struct game *params);
+void update_score(struct game * params);
+void update_score_next(struct game *params);
 
 //screen_printer
 void window_update(sfRenderWindow *window, struct game *params);
@@ -113,7 +122,7 @@ sfIntRect text_lego_rank(struct game *params);
 //window_god
 sfRenderWindow *create_my_window(int width, int height);
 void run_window(sfRenderWindow *window, sfEvent event, int width, int height);
-void dispose(sfRenderWindow *window);
+void dispose(sfRenderWindow *window, struct game *params);
 
 //refresh_rate_manager
 void refresh_anim(sfClock *frame_clock, \
@@ -144,6 +153,8 @@ void lego_gestion2(struct game *params);
 
 //scrore_drawer
 void load_scoreboard2(struct game *params);
+void update_score2(struct game * params);
+void update_score_next2(struct game *params);
 
 //screen_printer
 void window_update2(sfRenderWindow *window, struct game *params);
