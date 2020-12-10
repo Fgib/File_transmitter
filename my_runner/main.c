@@ -22,7 +22,6 @@ sfRenderWindow *window_creator(int width, int height)
 void refresh_window(sfClock *frame_rate, sfRenderWindow *window, struct game *params)
 {
     sfClock_restart(frame_rate);
-    sfRenderWindow_clear(window, sfBlack);
     obstacle_manager(params);
     player_gestion(params);
     window_update(window, params);
@@ -35,11 +34,12 @@ void run_game(sfRenderWindow *window, sfEvent event, int width, int height)
     sfClock *frame_rate = sfClock_create();
     struct game *params = malloc(sizeof(struct game));
     load_settings(params, width, height);
+    sfRenderWindow_setFramerateLimit(window, 240);
     while (sfRenderWindow_isOpen(window)) {
         while (sfRenderWindow_pollEvent(window, &event)) {
             manage_events(window, event, params);
         }
-        if (sfClock_getElapsedTime(frame_rate).microseconds > 16667) {
+        if (sfClock_getElapsedTime(frame_rate).microseconds > 16665) {
             refresh_window(frame_rate, window, params);
             refresh_parallax(params);
         }

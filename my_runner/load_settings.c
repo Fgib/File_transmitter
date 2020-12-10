@@ -45,13 +45,13 @@ struct obstacle *initialize_obstacle(int i, struct game *params)
 
     obstacle_s->vel = -7.0;
     obstacle_s->coo.x = 960 + (2020 / params->nb_obs) * i;
-    //obstacle_s->coo.y = random_gen(300, 1000);
-    obstacle_s->coo.y = 950;
+    obstacle_s->coo.y = random_gen(400, 880);
     return (obstacle_s);
 }
 
 void load_settings(struct game *params, int width, int height)
 {
+    int spacing = 300;
     params->lives = 3;
     params->score = 0;
     params->nb_obs = 4;
@@ -64,6 +64,7 @@ void load_settings(struct game *params, int width, int height)
     params->play_b = initialize_button(600, 600, 300, 400);
     for (int i = 0; i < params->nb_obs; i++) {
         params->obs[i] = initialize_obstacle(i, params);
+        params->obs[i]->spacing = spacing;
     }
     write(1, "Successfully initialized settings\n", 34);
     load_textures(params);

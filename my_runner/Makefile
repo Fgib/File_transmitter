@@ -18,13 +18,13 @@ SRC			=	obstacle_manager.c\
 
 OBJ			=	$(SRC:.c=.o)
 
-CFLAGS		=	-Iinclude -g3 -lm $(EFLAGS)
+CFLAGS		=	-Iinclude -lm $(EFLAGS)
 
 DEBUG		=	@
 
 NAME		=	my_runner
 
-EFLAGS		=	-Werror -Wall  -Wextra -Wpedantic -Wshadow -Wcast-qual -Wunreachable-code
+EFLAGS		=	-Werror -Wall  -Wextra -Wpedantic
 
 CSFMLFLAGS	=	-l csfml-graphics -l csfml-window -l csfml-system -l csfml-audio
 
@@ -33,7 +33,7 @@ DEBUG_FLAG	=	--no-print-directory
 all: do
 
 do:	$(OBJ)
-	gcc -o $(NAME) $(OBJ) $(CSFMLFLAGS) $(CFLAGS)
+	gcc -o $(NAME) $(OBJ) $(CSFMLFLAGS) $(CFLAGS) -g3
 	$(DEBUG) make $(DEBUG_FLAG) clean
 	$(DEBUG) printf "\nCompilation success\n"
 

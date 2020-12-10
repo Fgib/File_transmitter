@@ -27,7 +27,7 @@ struct game {
     struct player *player;
     struct button *play_b;
     struct button *exit_b;
-    struct obstacle *obs[15];
+    struct obstacle *obs[4];
     struct parallax *parallax;
 };
 
@@ -38,7 +38,9 @@ struct button {
 };
 
 struct player {
+    int jump;
     int max_y;
+    int min_y;
     double vel;
     int skin_id;
     int action_id;
@@ -57,8 +59,10 @@ struct parallax {
 
 struct obstacle {
     double vel;
+    int spacing;
     sfVector2f coo;
-    sfSprite *sprite;
+    sfSprite *top;
+    sfSprite *bot;
 };
 
 //Draw_window
@@ -102,16 +106,5 @@ void respawn_obstacle(struct obstacle *obs);
 void obstacle_manager(struct game *params);
 
 //player_manager
-void check_hitbox(struct game *params);
+int check_hitbox(struct game *params, int i);
 void player_gestion(struct game *params);
-
-
-
-
-
-
-
-
-
-
-void player2_gestion(struct game *params);

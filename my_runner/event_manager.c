@@ -20,9 +20,9 @@ void manage_events(sfRenderWindow *window, sfEvent event, struct game *params)
         }
         if (event.key.code == sfKeyM) {
             params->player->vel = -2770;
-        }/*
-        if (event.key.code == sfKeyLeft) {
-            params->player->coo.x -= 2;
-        }*/
+        }
+        if (event.key.code == sfKeyN) {
+            params->player->vel = -1500;
+        }
     }
 }
