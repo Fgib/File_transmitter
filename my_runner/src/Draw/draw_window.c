@@ -59,6 +59,13 @@ void custom_menu(sfRenderWindow *window, struct game *params)
     sfRenderWindow_drawSprite(window, params->player->sprite, NULL);
     sfRenderWindow_drawSprite(window, params->exit_b->sprite, NULL);
     sfRenderWindow_drawText(window, params->cstom_t, NULL);
+    if (params->setxt->bool_color == 1) {
+        sfRenderWindow_drawSprite(window, params->setxt->white->off, NULL);
+        sfRenderWindow_drawSprite(window, params->setxt->black->on, NULL);
+    } else {
+        sfRenderWindow_drawSprite(window, params->setxt->white->on, NULL);
+        sfRenderWindow_drawSprite(window, params->setxt->black->off, NULL);
+    }
 }
 
 void game_engine(sfRenderWindow *window, struct game *params)

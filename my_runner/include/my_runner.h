@@ -55,16 +55,21 @@ struct game {
 struct set_txt {
     int bool_cheat;
     int bool_level;
+    int bool_color;
     sfText *cheat_on;
     sfText *cheat_off;
     sfText *easy;
     sfText *medium;
     sfText *hard;
+    sfText *t_white;
+    sfText *t_black;
     struct trigger *tr_on;
     struct trigger *tr_off;
     struct trigger *tr_eas;
     struct trigger *tr_med;
     struct trigger *tr_har;
+    struct trigger *white;
+    struct trigger *black;
 };
 
 struct button {
@@ -150,6 +155,7 @@ void load_settings(struct game *params, int width, int height);
 
 //Load_settings_bis
 void initialize_texts(struct game *params);
+void initialize_texts_2(struct game *params);
 struct money *initialize_coins(int i);
 struct obstacle *initialize_obstacle(void);
 

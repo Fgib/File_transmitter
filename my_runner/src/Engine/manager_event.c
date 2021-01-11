@@ -76,6 +76,11 @@ void custom_menu_event(sfEvent event, struct game *params)
         params->game_step = 0;
         return;
     }
+    if (click_t(event, params->setxt->white) == 'y')
+        params->setxt->bool_color = 0;
+    if (click_t(event, params->setxt->black) == 'y')
+        params->setxt->bool_color = 1;
+    return;
 }
 
 void game_engine_event(sfEvent event, struct game *params)

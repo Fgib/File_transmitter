@@ -45,10 +45,20 @@ void initialize_texts(struct game *params)
     params->setxt->medium = sfText_create();
     params->setxt->cheat_on = sfText_create();
     params->setxt->cheat_off = sfText_create();
-    params->setxt->tr_on = initialize_trigger(0, 1100, 490);
+    params->buffer = sfSoundBuffer_createFromFile("assets/sound/arc.ogg");
+    initialize_texts_2(params);
+}
+
+void initialize_texts_2(struct game *params)
+{
+    params->setxt->bool_color = 0;
+    params->setxt->t_black = sfText_create();
+    params->setxt->t_white = sfText_create();
+    params->setxt->white = initialize_trigger(0, 1035, 690);
+    params->setxt->black = initialize_trigger(0, 820, 690);
+    params->setxt->tr_on = initialize_trigger(0, 1050, 490);
     params->setxt->tr_off = initialize_trigger(1, 1100, 590);
     params->setxt->tr_eas = initialize_trigger(1, 400, 440);
     params->setxt->tr_med = initialize_trigger(0, 400, 540);
     params->setxt->tr_har = initialize_trigger(0, 400, 640);
-    params->buffer = sfSoundBuffer_createFromFile("assets/sound/arc.ogg");
 }

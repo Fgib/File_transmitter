@@ -35,7 +35,8 @@ void refresh_animation(sfClock *anima_rate, struct game *params)
 {
     params->player->skin_id += params->player->skin_id < 23 ? 1 : -23;
     sfSprite_setTextureRect(params->player->sprite,
-    get_intrect(0, params->player->skin_id * 156.25, 150, 100));
+    get_intrect(params->setxt->bool_color * 100,
+    params->player->skin_id * 156.25, 150, 100));
     for (int i = 0; i < params->nb_coin; i++) {
         params->coins[i]->skin_id += params->coins[i]->skin_id < 23 ? 1 : -23;
         sfSprite_setTextureRect(params->coins[i]->sprite,
