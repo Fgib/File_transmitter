@@ -1,47 +1,50 @@
 ##
 ## EPITECH PROJECT, 2020
-## my_runner
+## my_hunter
 ## File description:
 ## Makefile
 ##
 
-SRC			=	obstacle_manager.c\
-				player_manager.c\
-				load_settings.c\
-				load_textures.c\
-				event_manager.c\
-				draw_parallax.c\
-				draw_window.c\
-				my_get.c\
-				maths.c\
-				main.c\
+SRC		=	src
 
-OBJ			=	$(SRC:.c=.o)
+ROOT	=	.
 
-CFLAGS		=	-Iinclude -lm $(EFLAGS)
+DEBUG	=	@
+COMPIL	=	make
 
-DEBUG		=	@
+#FLAGS
+FLAGS_COMPIL	=	-C
+FLAGS_CLEAN		=	clean
+FLAGS_FCLEAN	=	fclean
+FLAGS_DEBUG		=	--no-print-directory
 
-NAME		=	my_runner
+#COLORS
+WHITE	=	\e[0m
+RED		=	\e[1;31m
+GREEN	=	\e[1;32m
+YELLOW	=	\e[1;33m
+BLUE	=	\e[1;34m
 
-EFLAGS		=	-Werror -Wall  -Wextra -Wpedantic
-
-CSFMLFLAGS	=	-l csfml-graphics -l csfml-window -l csfml-system -l csfml-audio
-
-DEBUG_FLAG	=	--no-print-directory
-
-all: do
-
-do:	$(OBJ)
-	gcc -o $(NAME) $(OBJ) $(CSFMLFLAGS) $(CFLAGS) -g3
-	$(DEBUG) make $(DEBUG_FLAG) clean
-	$(DEBUG) printf "\nCompilation success\n"
+all:
+	$(DEBUG) printf "$(YELLOW)========== COMPILATION ==========\n$(WHITE)"
+	$(DEBUG) printf "$(RED)  Projet CPE_My_Runner_2020$(YELLOW)  \n\n$(WHITE)"
+	$(DEBUG) $(COMPIL) $(FLAGS_DEBUG) $(FLAGS_COMPIL) $(ROOT)/$(SRC)
+	$(DEBUG) printf "$(GREEN)\nCompilation Success\n$(WHITE)"
+	$(DEBUG) printf "$(YELLOW)Enjoy the game\n\n$(WHITE)"
 
 clean:
-	$(DEBUG) rm -rf $(OBJ)
-	$(DEBUG) rm -rf *.vgcore*
+	$(DEBUG) printf "$(RED)Binary deletion\n$(WHITE)"
+	$(DEBUG) $(COMPIL) $(FLAGS_DEBUG) $(FLAGS_CLEAN) $(FLAGS_COMPIL) $(ROOT)/$(SRC)
 
-fclean:	clean
-	$(DEBUG) rm -rf $(NAME)
-
-re:	fclean all
+fclean: clean
+	$(DEBUG) printf "$(RED)All non-build files deletion :\n$(WHITE)"
+	$(DEBUG) $(COMPIL) $(FLAGS_DEBUG) $(FLAGS_FCLEAN) $(FLAGS_COMPIL) $(ROOT)/$(SRC)
+	$(DEBUG) printf "$(RED)    -removed object files\n$(WHITE)"
+	$(DEBUG) printf "$(RED)    -removed valgrind files\n$(WHITE)"
+	$(DEBUG) printf "$(RED)    -removed emacs temporary files\n$(WHITE)"
+	
+re:	
+	$(DEBUG) printf "$(YELLOW)============CLEANING============\n$(WHITE)"
+	$(DEBUG) make $(FLAGS_DEBUG) fclean
+	$(DEBUG) printf "$(GREEN)Successfully cleaned\n\n$(WHITE)"
+	$(DEBUG) make $(FLAGS_DEBUG) all
